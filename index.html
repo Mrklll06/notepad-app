@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Notepad App</title>
+</head>
+<body>
+    <h1>Offline Notepad</h1>
+    <textarea id="notepad" style="width: 100%; height: 300px;"></textarea>
+    <button onclick="saveNote()">Save Locally</button>
+    <script>
+        function saveNote() {
+            const note = document.getElementById('notepad').value;
+            localStorage.setItem('note', note);
+            alert('Note saved!');
+        }
+        // Load saved note on page load
+        document.getElementById('notepad').value = localStorage.getItem('note') || '';
+    </script>
+</body>
+</html>
